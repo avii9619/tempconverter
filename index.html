@@ -1,0 +1,45 @@
+<html>
+
+<head>
+	<title>temp converter by avi </title>
+	<style>
+	*{font-size: 50px; font-family: ink free;}
+	body{background-color: azure;}
+	
+	h1{background-color:black;color:white}
+	</style>
+</head>
+
+
+<body>
+<center>
+	<h1> temp converter App </h1>
+	<form >
+	<label for="cel"> Celsius </label>
+	<input type="number" step="any" placeholder="Enter temp in cel" id="cel" />
+	<br><br>
+	<label for="frh"> Farh </label>
+	<input type="number" step="any" placeholder="enter temp in farh" id="frh"/>
+	</form>
+	<h2 id="msg" />
+
+	<script>
+	let cel=document.getElementById("cel");
+	let frh = document.getElementById("frh");
+
+	cel.addEventListener("input",function(){
+		let c= parseFloat(cel.value);
+		let f=(c*9/5) + 32;
+		frh.value=f.toFixed(2);
+	});
+	frh.addEventListener("input",function(){
+		let f= parseFloat(frh.value);
+		let c=(f-32) * 5/9;
+		cel.value=c.toFixed(2);
+	});
+	</script>
+</center>
+</body>
+
+
+</html>
